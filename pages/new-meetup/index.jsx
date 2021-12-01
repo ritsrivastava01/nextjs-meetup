@@ -12,10 +12,8 @@ export default function NewMeetupPage() {
         "content-type": "application/json",
       },
     });
-    const data = await resp.json();
-    if (data.status === 201) {
-      router.push("/");
-    }
+    await resp.json();
+    router.push("/");
   };
   return <MeetupForm onSummitHandler={submitHandler}></MeetupForm>;
 }
